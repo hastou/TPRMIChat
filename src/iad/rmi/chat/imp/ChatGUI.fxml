@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iad.rmi.chat.imp.ChatLayout">
+   <bottom>
+      <ToolBar prefHeight="31.0" prefWidth="910.0" BorderPane.alignment="CENTER">
+         <items>
+          <Button fx:id="refreshConferencesButton" mnemonicParsing="false" onAction="#handle" prefHeight="26.0" prefWidth="168.0" text="Refresh conferences" />
+            <Button fx:id="connectButton" disable="true" mnemonicParsing="false" onAction="#handle" text="Connect" />
+            <Label fx:id="logLabel" />
+         </items>
+      </ToolBar>
+   </bottom>
+   <left>
+      <ListView fx:id="conferenceListView" onMouseClicked="#handle" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <ListView prefHeight="200.0" prefWidth="200.0" />
+   </right>
+   <top>
+      <Label fx:id="titleLabel" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox minHeight="-Infinity" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="messagesListView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <HBox prefHeight="30.0" prefWidth="435.0">
+                     <children>
+                        <TextField fx:id="messageInput" prefHeight="30.0" prefWidth="314.0" promptText="Message" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="sendMessageButton" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="86.0" text="Send" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="fetchButton" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="81.0" text="Fetch" />
+                     </children>
+                  </HBox>
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
